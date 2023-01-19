@@ -1,0 +1,19 @@
+{
+  "name": "graphql-lab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:andersonpensephp/graphql-lab.git",
+  "author": "Anderson",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon -r sucrase/register src/index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^3.11.1",
+    "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "sucrase": "^3.29.0"
+  }
+}
