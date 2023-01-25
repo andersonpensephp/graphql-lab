@@ -6,13 +6,16 @@
   "author": "Anderson",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon -r sucrase/register src/index.js"
+    "dev": "nodemon -r sucrase/register src/index.js",
+    "server": "json-server --watch db.json"
   },
   "dependencies": {
     "apollo-server": "^3.11.1",
+    "axios": "^1.2.4",
     "graphql": "^16.6.0"
   },
   "devDependencies": {
+    "json-server": "^0.17.1",
     "nodemon": "^2.0.20",
     "sucrase": "^3.29.0"
   }

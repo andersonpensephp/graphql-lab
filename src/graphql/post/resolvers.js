@@ -1,25 +1,19 @@
-const post = () => {
-  return {
-    id: '1',
-    title: 'Test title post 1'
+const post = async (_, { postId }, { getPost }) => {
+  try {
+    const { data } = await getPost(postId);
+    return data;
+  } catch (error) {
+    console.log(error);
   }
 };
 
-const posts = () => {
-  return [
-    {
-      id: '1',
-      title: 'Test title post 1'
-    },
-    {
-      id: '2',
-      title: 'Test title post 2'
-    },
-    {
-      id: '3',
-      title: 'Test title post 3'
-    }
-  ]
+const posts = async (_, __, { getPosts }) => {
+  try {
+    const { data } = await getPosts();
+    return data;
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export const postResolvers = {

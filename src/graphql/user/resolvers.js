@@ -1,25 +1,19 @@
-const user = () => {
-  return {
-    id: '1',
-    name: 'Fulano 1'
+const user = async (_, { userId }, { getUser }) => {
+  try {
+    const { data } = await getUser(userId);
+    return data;
+  } catch (error) {
+    console.log(error);
   }
 };
 
-const users = () => {
-  return [
-    {
-      id: '1',
-      name: 'Fulano 1'
-    },
-    {
-      id: '2',
-      name: 'Fulano 2'
-    },
-    {
-      id: '3',
-      name: 'Fulano 3'
-    }
-  ]
+const users = async (_,__, { getUsers }) => {
+  try {
+    const { data } = await getUsers();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export const userResolvers = {
