@@ -7,9 +7,10 @@ const post = async (_, { postId }, { getPost }) => {
   }
 };
 
-const posts = async (_, __, { getPosts }) => {
+const posts = async (_, { input }, { getPosts }) => {
   try {
-    const { data } = await getPosts();
+    const apiFiltersInput = new URLSearchParams(input);
+    const { data } = await getPosts(apiFiltersInput.toString());
     return data;
   } catch (error) {
     console.log(error)

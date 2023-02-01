@@ -7,9 +7,10 @@ const user = async (_, { userId }, { getUser }) => {
   }
 };
 
-const users = async (_,__, { getUsers }) => {
+const users = async (_,{ input }, { getUsers }) => {
   try {
-    const { data } = await getUsers();
+    const apiFiltersInput = new URLSearchParams(input);
+    const { data } = await getUsers(apiFiltersInput.toString());
     return data;
   } catch (error) {
     console.log(error);

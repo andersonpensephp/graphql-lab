@@ -9,9 +9,9 @@ export const context = () => {
       };
       return axios(options);
     },
-    getUsers: () => {
+    getUsers: (input) => {
       const options = {
-        url: `${API_URL}/users`
+        url: `${API_URL}/users?${input}`
       };
       return axios(options);
     },
@@ -21,9 +21,10 @@ export const context = () => {
       };
       return axios(options);
     },
-    getPosts: () => {
+    getPosts: (input) => {
+      console.log(input);
       const options = {
-        url: `${API_URL}/posts`
+        url: `${API_URL}/posts?${input}`
       };
       return axios(options);
     }
