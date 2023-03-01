@@ -22,7 +22,6 @@ export const context = () => {
       return axios(options);
     },
     getPosts: (input) => {
-      console.log(input);
       const options = {
         url: `${API_URL}/posts?${input}`
       };
