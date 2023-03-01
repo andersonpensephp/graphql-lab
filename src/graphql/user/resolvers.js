@@ -8,6 +8,7 @@ const user = async (_, { userId }, { getUser }) => {
 };
 
 const users = async (_,{ input }, { getUsers }) => {
+  console.log(input);
   try {
     const apiFiltersInput = new URLSearchParams(input);
     const { data } = await getUsers(apiFiltersInput.toString());
